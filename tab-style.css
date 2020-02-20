@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,500,700");
+/* Global style */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+h3{
+  font-size: 1.2rem;
+  margin-bottom: -0.75rem;
+}
+
+/* Tab components style */
+.container {
+  max-width: 1000px;
+	margin: 0 auto;
+}
+
+#container__tab {
+  position: relative;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  margin: 30px 0 30px 0;
+  padding: 0;
+}
+
+#container__tab > [name="container__tab__radio"] {
+  position: absolute; 
+  visibility: hidden; 
+}
+
+#container__tab > label {
+  position: relative;
+  display: inline-block;  
+  flex-grow: 3;
+  -webkit-box-flex: 3;
+	-webkit-flex-grow: 3;
+	-ms-flex-positive: 3;  
+  width: auto;
+  top: 0px;
+  margin: 4px 2px 0 0;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+  border-radius: 5px 5px 0 0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #a9bfc3;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+#container__tab > label:hover {
+  background: #d0e9ee;
+}
+
+#container__tab > [id^="container__tab__content"] {
+  -webkit-box-ordinal-group: 999;
+  -webkit-order: 999;
+  -ms-flex-order: 999;
+  order: 999;
+  display: none; 
+  overflow: hidden;    
+  top: 50px;
+  width: 100%;
+  min-height: 5em;
+  font-size: 1rem;
+  border: 1px solid #000000;
+  padding: 10px 25px 25px 25px;
+  background: #d0e9ee;
+  margin-top: -1px;
+  border-radius: 0 5px 5px 5px;
+  z-index: 2;
+}
+
+#container__tab > [name="container__tab__radio"]:checked + label {
+  margin-top: 0px;
+  padding-top: 10px;
+  background: #d0e9ee;
+  border-color: #000000 #000000 #d0e9ee #000000;
+  z-index: 4;
+}
+
+#container__tab > #container__tab__radio-label-1:checked ~ #container__tab__content-1 { display: block; }
+#container__tab > #container__tab__radio-label-2:checked ~ #container__tab__content-2 { display: block; }
+#container__tab > #container__tab__radio-label-3:checked ~ #container__tab__content-3 { display: block; }
+#container__tab > #container__tab__radio-label-4:checked ~ #container__tab__content-4 { display: block; }
+
+@media only screen and (max-width: 768px) {
+	#container__tab > label {
+		width: 100%;
+	}
+}
