@@ -4,4 +4,10 @@ describe('Tabs component', () => {
 
     assert.lengthOf(tabsComponent, 4)
   });
+
+  it('should active first tab when view init', () => {
+    const tabsComponent = jQuery(jQuery(window.__html__['index.html']).find( '#container__tab__radio-label-1' ))[0]
+
+    expect(jQuery(tabsComponent).prop("checked")).be.true
+  });
 });
